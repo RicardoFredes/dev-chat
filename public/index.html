@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer type="module" src="index.js"></script>
+</head>
+<body>
+  <div id="login" class="center-all">
+    <div class="card">
+      <h4 class="card__title">Entrar no DevChat</h4>
+      <form id="login-form" class="form">
+        <div id="group-id" class="form-control">
+          <label for="login-group-id">Id do grupo</label>
+          <input placeholder="Exemplo: A5z-89w" class="form-input" id="login-group-id" type="text" autocomplete="off" required>
+        </div>
+        <div class="form-control">
+          <label for="login-name">Seu nome ou apelido</label>
+          <input placeholder="Exemplo: Goku" class="form-input" id="login-name" type="text" autocomplete="off" required>
+        </div>
+        <button class="btn">Entrar</button>
+      </form>
+    </div>
+  </div>
+  <div id="chat" style="display: none;">
+    <div id="chat-messages"></div>
+    <form id="chat-form">
+      <input class="form-input" id="chat-input" placeholder="Digite a sua mensagem" name="message" type="text" autocomplete="off">
+      <button class="btn">
+        <svg height="24" width="24" viewBox="0 0 24 24">
+          <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" fill="currentcolor"></path>
+        </svg>
+      </button>
+    </form>
+  </div>
+</body>
+</html>

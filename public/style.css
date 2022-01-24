@@ -1,0 +1,217 @@
+:root {
+  --width: 420px;
+
+  --color-background-primary: #222229;
+  --color-background-focus: #111119;
+  --color-background-paper: #444455;
+  --color-background-theme: #356;
+  --color-background-theme-focus: #478;
+  --color-text-primary: #ccd;
+  --color-text-secondary: #ccd9;
+  --color-text-theme: #acd;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --shadow-sm: 0px 2px 8px rgba(0, 0, 0, 0.1), 0px 4px 32px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 2px 8px rgba(0, 0, 0, 0.2), 0px 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  margin: 0;
+  font-size: 16px;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-background-theme);
+}
+
+#login {
+  height: 100vh;
+  padding: var(--spacing-sm);
+}
+
+.center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  padding: var(--spacing-md);
+  max-width: var(--width);
+  width: 100%;
+  background-color: var(--color-background-paper);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.card__title {
+  margin: 0;
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-theme);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+.card__title:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--color-background-primary);
+  margin: var(--spacing-md) calc(var(--spacing-md) * -1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-control--is-hide {
+  height: 0;
+  overflow: unset;
+}
+
+.form-control > * {
+  width: 100%;
+}
+
+.form-input {
+  display: block;
+  background-color: var(--color-background-primary);
+  border: none;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-theme);
+  font-size: 0.9rem;
+}
+.form-input::placeholder {
+  color: var(--color-text-secondary);
+}
+.form-input:focus-visible {
+  outline: none;
+  background-color: var(--color-background-focus);
+}
+
+.form-control label {
+  font-size: 0.8rem;
+  display: block;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-secondary);
+}
+
+.btn {
+  background-color: var(--color-background-theme);
+  border: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-theme);
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform ease 50ms, background-color ease 250ms;
+}
+.btn:hover {
+  background-color: var(--color-background-theme-focus);
+}
+.btn:active {
+  background-color: var(--color-background-theme-focus);
+  transform: translateY(5%);
+}
+.btn:focus-visible {
+  outline: none;
+  background-color: var(--color-background-theme-focus);
+  box-shadow: var(--shadow-md);
+}
+
+#chat-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: var(--spacing-xs);
+  background-color: var(--color-background-paper);
+  display: flex;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+#chat-input {
+  flex-grow: 1;
+}
+
+#chat-messages {
+  height: calc(100vh - 72px);
+  overflow-y: scroll;
+}
+
+.message {
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+}
+
+.message__username {
+  background-color: var(--color-background-paper);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  letter-spacing: 0.02rem;
+  color: var(--color-text-secondary);
+}
+
+.message__text {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.message--is-bot .message__text {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+}
+
+.message--is-me .message__username {
+  background-color: var(--color-background-theme);
+  color: var(--color-text-theme);
+}
+
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-background-paper) var(--color-background-primary);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-background-primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-background-paper);
+  border-radius: 20px;
+  border: 3px solid var(--color-background-primary);
+}
