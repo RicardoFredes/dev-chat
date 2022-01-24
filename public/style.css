@@ -158,7 +158,7 @@ hr {
 }
 
 #chat-messages {
-  height: calc(100vh - 72px);
+  height: calc(100vh - 80px);
   overflow-y: scroll;
 }
 
