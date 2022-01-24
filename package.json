@@ -1,6 +1,10 @@
 {
+  "name": "dev-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index",
+    "dev": "nodemon server.js",
     "start": "node index"
   },
   "dependencies": {
